@@ -70,6 +70,7 @@ jobs:
         eb use init-env
 
     - name: Deploy to Elastic Beanstalk
-      run: |
+      run:
+        sleep 30 |
         eb deploy
 
