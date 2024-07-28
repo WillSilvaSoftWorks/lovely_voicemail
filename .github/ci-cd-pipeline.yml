@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and push backend image
+      run: |
+        docker build -t willsilvasoftworks/lovely_voicemail_backend:latest ./backend
+        docker push willsilvasoftworks/lovely_voicemail_backend:latest
+
+    - name: Build and push frontend image
+      run: |
+        docker build -t willsilvasoftworks/lovely_voicemail_frontend:latest ./frontend
+        docker push willsilvasoftworks/lovely_voicemail_frontend:latest
+
+    - name: Deploy to Elastic Beanstalk
+      run: |
+        eb init -p docker lovely-voicemail --region ${{ secrets.AWS_REGION }} --platform docker
+        eb deploy
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
