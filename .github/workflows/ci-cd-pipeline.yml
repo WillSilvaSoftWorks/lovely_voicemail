@@ -68,9 +68,11 @@ jobs:
       run: |
         eb init -p docker lovely-voicemail --region ${{ secrets.AWS_REGION }}
         eb use init-env
+      
+    - name: Wait for the application version to be registered
+      run: sleep 30
 
     - name: Deploy to Elastic Beanstalk
       run:
-        sleep 30 |
         eb deploy
 
