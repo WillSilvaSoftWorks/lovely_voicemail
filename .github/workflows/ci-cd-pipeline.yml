@@ -67,6 +67,7 @@ jobs:
     - name: Initialize Elastic Beanstalk environment
       run: |
         eb init -p docker lovely-voicemail --region ${{ secrets.AWS_REGION }}
+        eb use init-env
 
     - name: Deploy to Elastic Beanstalk
       run: |
