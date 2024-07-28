@@ -34,7 +34,7 @@ jobs:
 
     - name: Deploy to Elastic Beanstalk
       run: |
-        eb init -p docker lovely-voicemail --region <your-aws-region> --platform docker
+        eb init -p docker lovely-voicemail --region ${{ secrets.AWS_REGION }} --platform docker
         eb deploy
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
