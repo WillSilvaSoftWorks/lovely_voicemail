@@ -1,0 +1,29 @@
+{
+    "version": "2",
+    "containerDefinitions": [
+      {
+        "name": "backend",
+        "image": "willsilvasoftworks/lovely_voicemail_backend:latest",
+        "memory": 512,
+        "cpu": 256,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 5001,
+            "hostPort": 5001
+          }
+        ],
+        "environment": [
+          {
+            "name": "MONGO_URL",
+            "value": ""
+          },
+          {
+            "name": "JWT_SECRET",
+            "value": ""
+          }
+        ]
+      }
+    ]
+  }
+  

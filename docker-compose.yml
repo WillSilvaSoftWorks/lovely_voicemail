@@ -5,9 +5,8 @@ services:
     build: ./backend
     ports:
       - '5001:5001'
-    environment:
-      - MONGO_URI=your_mongo_db_uri
-      - JWT_SECRET=your_jwt_secret
+    env_file:
+      - .env
 
   frontend:
     build: ./frontend
