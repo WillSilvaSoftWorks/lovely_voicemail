@@ -1,4 +1,4 @@
-name: Build and Deploy Backend to Docker and AWS
+name: Build and Deploy to Docker and AWS
 
 on:
   push:
@@ -32,27 +32,20 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/lovely_voicemail_backend:latest
 
-    - name: Pack backend application
-      run: |
-        cd backend
-        zip -r ../backend-${{ github.run_id }}.zip .
-      working-directory: ./backend
-
-    - name: Upload backend artifact
-      uses: actions/upload-artifact@v2
+    - name: Build and push frontend Docker image
+      uses: docker/build-push-action@v2
       with:
-        name: backend-deployment-package
-        path: backend-${{ github.run_id }}.zip
+        context: ./frontend
+        push: true
+        tags: ${{ secrets.DOCKER_USERNAME }}/lovely_voicemail_frontend:latest
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-    - name: Download backend artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: backend-deployment-package
+    - name: Checkout code
+      uses: actions/checkout@v2
 
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
@@ -63,7 +56,6 @@ jobs:
       run: |
         pip install awscli
         pip install awsebcli
-
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -71,15 +63,16 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-    - name: Deploy to Elastic Beanstalk
-      uses: einaregilsson/beanstalk-deploy@v22
-      with:
-        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: lovely_voicemail_backend
-        environment_name: init-env
-        version_label: backend-${{ github.run_id }}
-        region: ${{ secrets.AWS_REGION }}
-        deployment_package: backend-${{ github.run_id }}.zip
-        wait_for_deployment: true
-        use_existing_version_if_available: true
+    - name: Initialize Elastic Beanstalk environment
+      run: |
+        eb init -p docker lovely-voicemail --region ${{ secrets.AWS_REGION }}
+        eb use init-env
+      
+    - name: Wait for the application version to be registered
+      run: sleep 60
+
+    - name: Deploy to Elastic Beanstalk with retry
+      run: |
+        for i in {1..5}; do
+          eb deploy && break || sleep 60;
+        done
