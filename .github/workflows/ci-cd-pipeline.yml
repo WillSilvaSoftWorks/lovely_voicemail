@@ -64,16 +64,17 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-    - name: Initialize Elastic Beanstalk environment
-      run: |
-        eb init -p docker lovely-voicemail --region ${{ secrets.AWS_REGION }}
-        eb use init-env
-      
-    - name: Wait for the application version to be registered
-      run: sleep 60
+    - name: Generate deployment package
+      run: zip -r deploy.zip . -x '*.git*'
 
-    - name: Deploy to Elastic Beanstalk with retry
-      run: |
-        for i in {1..5}; do
-          eb deploy && break || sleep 60;
-        done
+    - name: Deploy to Elastic Beanstalk
+      uses: einaregilsson/beanstalk-deploy@v22
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: lovely_voicemail_server
+        environment_name: init-env
+        version_label: ${{ github.run_id }}
+        region: ${{ secrets.AWS_REGION }}
+        deployment_package: deploy.zip
+
