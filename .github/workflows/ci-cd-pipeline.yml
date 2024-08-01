@@ -1,4 +1,4 @@
-name: Build and Deploy to Docker and AWS
+name: Build and Deploy Backend to Docker and AWS
 
 on:
   push:
@@ -32,21 +32,11 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/lovely_voicemail_backend:latest
 
-    - name: Build and push frontend Docker image
-      uses: docker/build-push-action@v2
-      with:
-        context: ./frontend
-        push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/lovely_voicemail_frontend:latest
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
@@ -64,14 +54,14 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-
     - name: Deploy to Elastic Beanstalk
       uses: einaregilsson/beanstalk-deploy@v22
       with:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: lovely_voicemail_server
-        environment_name: init-env
+        application_name: lovely_voicemail_backend
+        environment_name: backend-env
+        version_label: backend-${{ github.run_id }}
         region: ${{ secrets.AWS_REGION }}
         use_existing_version_if_available: true
-
+        deployment_package: backend-${{ github.run_id }}.zip
