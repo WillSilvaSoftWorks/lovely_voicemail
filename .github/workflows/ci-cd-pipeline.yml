@@ -64,8 +64,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-    - name: Generate deployment package
-      run: zip -r deploy.zip . -x '*.git*'
 
     - name: Deploy to Elastic Beanstalk
       uses: einaregilsson/beanstalk-deploy@v22
@@ -76,5 +74,5 @@ jobs:
         environment_name: init-env
         version_label: ${{ github.run_id }}
         region: ${{ secrets.AWS_REGION }}
-        deployment_package: deploy.zip
+        use_existing_version_if_available: true
 
