@@ -1,10 +1,12 @@
 branch-defaults:
   default:
     environment: init-env
-    group_suffix: null
+environment-defaults:
+  init-env:
+    branch: null
+    repository: null
 global:
   application_name: lovely_voicemail_server
-  branch: null
   default_ec2_keyname: lovely_voicemail_key
   default_platform: Docker running on 64bit Amazon Linux 2023
   default_region: us-east-1
@@ -13,6 +15,5 @@ global:
   platform_name: null
   platform_version: null
   profile: null
-  repository: null
   sc: null
   workspace_type: Application
