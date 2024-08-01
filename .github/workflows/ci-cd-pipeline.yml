@@ -32,11 +32,28 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/lovely_voicemail_backend:latest
 
+    - name: Pack backend application
+      run: |
+        cd backend
+        zip -r ../backend-${{ github.run_id }}.zip .
+      working-directory: ./backend
+
+    - name: Upload backend artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: backend-deployment-package
+        path: backend-${{ github.run_id }}.zip
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
+    - name: Download backend artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: backend-deployment-package
+
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
@@ -60,8 +77,9 @@ jobs:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: lovely_voicemail_backend
-        environment_name: backend-env
+        environment_name: init-env
         version_label: backend-${{ github.run_id }}
         region: ${{ secrets.AWS_REGION }}
-        use_existing_version_if_available: true
         deployment_package: backend-${{ github.run_id }}.zip
+        wait_for_deployment: true
+        use_existing_version_if_available: true
