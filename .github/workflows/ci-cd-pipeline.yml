@@ -72,7 +72,6 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: lovely_voicemail_server
         environment_name: init-env
-        version_label: ${{ github.run_id }}
         region: ${{ secrets.AWS_REGION }}
         use_existing_version_if_available: true
 
