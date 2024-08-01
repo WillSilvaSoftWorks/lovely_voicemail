@@ -71,8 +71,8 @@ jobs:
       with:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: MyApplicationName
-        environment_name: MyApplication-Environment
-        version_label: 12345
+        application_name: lovely_voicemail_server
+        environment_name: init-env 
+        version_label: app-240731_212428824536
         region: ${{ secrets.AWS_REGION }}
         deployment_package: deploy.zip
