@@ -2,7 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import { fetchData } from './services/api';
-import UnderConstruction from './components/UnderConstruction'; // Import the component
+import Backdrop from './components/Backdrop'; // Import the component
+import Navbar from './components/Navbar';
+import Herosection from './components/Herosection';
+import AbsoluteNeed from './components/AbsoluteNeed';
+import ConstructionBanner from './components/ConstructionBanner'; // Import the banner component
+
 
 
 function App() {
@@ -23,7 +28,13 @@ function App() {
 
   return (
     <div className="App">
-      <UnderConstruction />
+      <ConstructionBanner />
+      <Backdrop />
+      <Navbar />
+      <Herosection />
+      <AbsoluteNeed />
+      
+      
       <h1>{data}</h1>
     </div>
   );

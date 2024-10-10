@@ -1,0 +1,68 @@
+/* AbsoluteNeed Card*/
+
+/* Full-width card styling */
+.absolute-need-card {
+    width: 100%; /* Full width of the screen */
+    max-width: 90%;
+    min-height: 100vh;
+    margin: 0 auto;
+    height: 50vh; /* 90% of the vertical space */
+    background-color: #f7f7f7; /* Off-white background */
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-sizing: border-box;
+}
+
+.card-content {
+    max-width: 1200px; /* Limiting the max-width for readability */
+    text-align: top;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    color: #333; /* Dark text color for readability */
+    padding: 1px;
+}
+
+.card-content h2 {
+    margin-top: 10px; /* Reduce the top margin to lessen white space */
+    margin-bottom: 10px; /* Adjust as needed for spacing below the element */
+    font-size: 50px;
+    color: #333;
+    text-align: center;
+    font-family: 'Dancing Script', sans-serif;
+}
+
+.card-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Optional media queries for responsiveness */
+@media (max-width: 768px) {
+
+    .absolute-need-card {
+        max-width: 95%; /* Narrow the card on smaller screens */
+        padding: 50px;
+        min-height: auto;
+        height: 90%;
+        margin-bottom: 15px;
+    } 
+
+    .card-content h2 {
+        font-size: 50px;
+    }
+
+    .card-content p {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .absolute-need-card {
+        padding: 10px;
+        
+    }
+}

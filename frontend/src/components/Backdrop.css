@@ -1,0 +1,14 @@
+/* Backdrop styling */
+.backdrop {
+    position: fixed; /* Stays fixed as you scroll */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-image: url('../assets/images/phone.png'); /* Replace with the correct path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* No repeat */
+    background-attachment: fixed; 
+    z-index: -100; /* Make sure it stays behind all other content */
+}
