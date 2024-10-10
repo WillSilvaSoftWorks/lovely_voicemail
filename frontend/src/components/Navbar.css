@@ -1,0 +1,124 @@
+/* Navbar styling*/
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space between logo/title and links */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent; /* No background */
+    z-index: 1000; /* Keep the navbar above other content */
+}
+
+/* Logo and title container */
+.navbar-logo-title {
+    display: flex; /* Align logo and title in a row */
+    align-items: center; /* Center them vertically */
+}
+
+/* Logo styling */
+.navbar-logo {
+    width: 100px; /* Make logo 2 times smaller */
+    height: 100px; /* Set height to maintain aspect ratio */
+    border-radius: 50%; /* Rounded edges */
+    margin-right: 15px; /* Space between logo and title */
+    margin-left: 100px;
+    border: 5px solid #FFB6C1; /* Complete border definition with color */
+    display: flex; /* Allows for centering content if needed */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+/* Title styling */
+.navbar-title {
+    color: #ffffff; /* Title color */
+    font-family: 'Dancing Script', sans-serif; /* Font for title */
+    font-size: 60px; /* Adjust font size as needed */
+}
+
+/* Links styling */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-links li {
+    margin-right: 20px; /* Space between links */
+}
+
+.nav-links li a {
+    color: #ffffff; /* Text color */
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; /* Font for links */
+    transition: color 0.3s ease;
+    margin-right: 10px;
+}
+
+.nav-links li a:hover {
+    color: grey; /* Change hover effect to grey */
+}
+
+@media (max-width: 768px) {
+      .navbar {
+        padding: 5px 10px;
+      }
+    
+      .navbar-logo {
+        width: 80px; /* Make the logo smaller on mobile */
+        height: 80px;
+      }
+    
+      .navbar-title {
+        font-size: 50px;
+      }
+    
+      .nav-links li a {
+        font-size: 18px; /* Reduce font size for links */
+      }
+
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .navbar-logo-title {
+        flex-direction: column; /* Stack logo and title vertically */
+        align-items: center;
+        margin: 0;
+    }
+
+    .navbar-logo {
+        margin-right: 0; /* Remove margin to center logo */
+        margin-bottom: 5px; /* Add space between logo and title */
+    }
+
+    .navbar-title {
+        font-size: 50px; /* Smaller title for iPhone dimensions */
+    }
+
+    .nav-links {
+        flex-direction: row; /* Stack links vertically */
+        margin: 10px;
+    }
+
+    .nav-links li {
+        margin-right: 10px;
+        margin-bottom: 10px; /* Add space between links */
+    }
+
+    .nav-links li a {
+        font-size: 20px;
+    }
+    
+
+}
+
+

@@ -1,0 +1,41 @@
+/* src/components/HeroSection.css */
+
+/* Hero content styling */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white; /* White text */
+    padding-top: 200px; /* Space from the top */
+    font-family: 'Poppins', sans-serif; /* Font family */
+    margin-bottom: 300px;
+}
+
+/* Title styling */
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', sans-serif;
+}
+
+/* Description text styling */
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+/* Button styling */
+.hero-button {
+    background-color: #FFB6C1; /* Pink button matching theme */
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.hero-button:hover {
+    background-color: #ff92a1; /* Darker pink when hovered */
+}

@@ -28,6 +28,19 @@
   color: #61dafb;
 }
 
+body {
+  background-color: #f8f8f8; /* Off-white */
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  background-color: #ffffff; /* White for contrast */
+  padding: 20px;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
