@@ -3,9 +3,9 @@ import React from 'react';
 import './AbsoluteNeed.css'; // CSS file for styling
 import productImage from '../assets/images/IMG_2231.jpg';
 
-function AbsoluteNeed() {
+function AbsoluteNeed({ isDrawerOpen }) {
   return (
-    <div className="absolute-need-section">
+    <div className={`absolute-need-section ${isDrawerOpen ? 'drawer-open' : ''}`}>
       <div className="absolute-need-content">
         <div className="image-container">
           <img src={productImage} alt="Vintage Phone" className="product-image" />

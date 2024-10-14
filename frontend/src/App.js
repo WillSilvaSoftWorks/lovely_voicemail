@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchData } from './services/api';
 import Backdrop from './components/Backdrop'; // Import the component
 import Navbar from './components/Navbar';
-import Herosection from './components/Herosection';
+import HeroSection from './components/HeroSection';
 import AbsoluteNeed from './components/AbsoluteNeed';
 import ConstructionBanner from './components/ConstructionBanner'; // Import the banner component
 import Footer from './components/Footer';
@@ -32,15 +32,16 @@ function App() {
 
   return (
     <div className="App">
-  <ConstructionBanner />
-  <Navbar isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
-  <div className="content">
-    <Backdrop isDrawerOpen={isDrawerOpen} />
-    <Herosection />
-    <AbsoluteNeed />
+      <ConstructionBanner />
+      <Navbar isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
+      <div className="content" >
+        <Backdrop isDrawerOpen={isDrawerOpen} />
+        <HeroSection isDrawerOpen={isDrawerOpen} />
+        <AbsoluteNeed isDrawerOpen={isDrawerOpen}/>
+        <Footer isDrawerOpen={isDrawerOpen} />
+      </div>
+      
   </div>
-  <Footer />
-</div>
 
   );
 }

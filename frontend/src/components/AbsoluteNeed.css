@@ -67,6 +67,10 @@
     background-color: #ff4c4c;
 }
 
+.absolute-need-section.drawer-open {
+    transform: translateY(150px); /* Adjust the value for smooth push down */
+  }
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .absolute-need-content {

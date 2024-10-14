@@ -30,3 +30,15 @@
 .construction-banner p {
     margin: 0; /* Remove default margins */
 }
+
+@media (max-width: 768px) {
+    .construction-banner p{
+        font-size: 12px;
+    }
+    .construction-icon span {
+        width: 15px; /* Adjust size of the construction icon */
+        height: 15px;
+        margin-right: 8px;
+    }
+    
+}
