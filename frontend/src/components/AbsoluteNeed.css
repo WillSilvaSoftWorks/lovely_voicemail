@@ -1,68 +1,109 @@
-/* AbsoluteNeed Card*/
-
-/* Full-width card styling */
-.absolute-need-card {
-    width: 100%; /* Full width of the screen */
-    max-width: 90%;
-    min-height: 100vh;
-    margin: 0 auto;
-    height: 50vh; /* 90% of the vertical space */
-    background-color: #f7f7f7; /* Off-white background */
+/* AbsoluteNeed Section Styling */
+.absolute-need-section {
+    width: 100%;
+    padding: 50px;
+    background-color: #f9f9f9; /* Off-white background */
     display: flex;
-    justify-content: flex-start;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.card-content {
-    max-width: 1200px; /* Limiting the max-width for readability */
-    text-align: top;
-    font-family: 'Poppins', sans-serif; /* Use Poppins font */
-    color: #333; /* Dark text color for readability */
-    padding: 1px;
+/* Content layout (image left, text right) */
+.absolute-need-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
 }
 
-.card-content h2 {
-    margin-top: 10px; /* Reduce the top margin to lessen white space */
-    margin-bottom: 10px; /* Adjust as needed for spacing below the element */
-    font-size: 50px;
+/* Image container */
+.image-container {
+    flex-basis: 40%; /* Ensure the image takes up 40% of the container */
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Round the corners */
+    object-fit: cover; /* Keep the aspect ratio */
+}
+
+/* Text container */
+.text-container {
+    flex-basis: 55%; /* Ensure the text takes up 55% of the container */
+}
+
+.card-title {
+    font-size: 40px;
     color: #333;
-    text-align: center;
-    font-family: 'Dancing Script', sans-serif;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 20px;
 }
 
-.card-content p {
+/* Paragraph Styling */
+.text-container p {
     font-size: 18px;
     line-height: 1.6;
-    margin-bottom: 10px;
+    color: #555;
+    margin-bottom: 20px;
 }
 
-/* Optional media queries for responsiveness */
+/* Button Styling */
+.absolute-need-button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.absolute-need-button:hover {
+    background-color: #ff4c4c;
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-
-    .absolute-need-card {
-        max-width: 95%; /* Narrow the card on smaller screens */
-        padding: 50px;
-        min-height: auto;
-        height: 90%;
-        margin-bottom: 15px;
-    } 
-
-    .card-content h2 {
-        font-size: 50px;
+    .absolute-need-content {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .card-content p {
+    .image-container {
+        margin-bottom: 20px;
+    }
+
+    .product-image {
+        width: 80%;
+    }
+
+    .card-title {
+        font-size: 30px;
+    }
+
+    .text-container p {
         font-size: 16px;
-        padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
+    .product-image {
+        width: 100%;
+    }
 
-    .absolute-need-card {
-        padding: 10px;
-        
+    .card-title {
+        font-size: 24px;
+    }
+
+    .text-container p {
+        font-size: 14px;
     }
 }
+
+
+

@@ -1,5 +1,3 @@
-/* src/components/HeroSection.css */
-
 /* Hero content styling */
 .hero-content {
     position: relative;
@@ -9,6 +7,7 @@
     padding-top: 200px; /* Space from the top */
     font-family: 'Poppins', sans-serif; /* Font family */
     margin-bottom: 300px;
+    transition: transform 0.3s ease; /* Smooth transition when drawer opens */
 }
 
 /* Title styling */
@@ -39,3 +38,9 @@
 .hero-button:hover {
     background-color: #ff92a1; /* Darker pink when hovered */
 }
+
+/* Push HeroSection down when the drawer opens */
+.drawer-open .hero-content {
+    transform: translateY(200px); /* Moves the HeroSection down by 200px */
+}
+

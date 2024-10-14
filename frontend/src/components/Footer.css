@@ -1,0 +1,51 @@
+/* Footer styling */
+footer {
+    background-color: #FFB6C1; /* Pink background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  /* Footer links */
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  footer ul li {
+    display: inline;
+  }
+  
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease;
+  }
+  
+  footer ul li a:hover {
+    color: grey;
+  }
+  
+  /* Copyright text */
+  footer p {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+  }
+  
+  /* Responsive Footer */
+  @media (max-width: 768px) {
+    footer ul {
+      flex-direction: row;
+    }
+  }
+  

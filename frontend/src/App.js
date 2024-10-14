@@ -1,5 +1,4 @@
 // src/App.js
-
 import React, { useEffect, useState } from 'react';
 import { fetchData } from './services/api';
 import Backdrop from './components/Backdrop'; // Import the component
@@ -7,12 +6,16 @@ import Navbar from './components/Navbar';
 import Herosection from './components/Herosection';
 import AbsoluteNeed from './components/AbsoluteNeed';
 import ConstructionBanner from './components/ConstructionBanner'; // Import the banner component
-
-
+import Footer from './components/Footer';
 
 function App() {
   const [data, setData] = useState('');
-  
+  const [isDrawerOpen, setDrawerOpen] = useState(false); // Drawer state
+
+  const toggleDrawer = () => {
+    setDrawerOpen(!isDrawerOpen); // Toggle drawer open or closed
+  };
+
   useEffect(() => {
     const getData = async () => {
       try {
@@ -28,15 +31,16 @@ function App() {
 
   return (
     <div className="App">
-      <ConstructionBanner />
-      <Backdrop />
-      <Navbar />
-      <Herosection />
-      <AbsoluteNeed />
-      
-      
-      <h1>{data}</h1>
-    </div>
+  <ConstructionBanner />
+  <Navbar isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
+  <div className="content">
+    <Backdrop isDrawerOpen={isDrawerOpen} />
+    <Herosection />
+    <AbsoluteNeed />
+  </div>
+  <Footer />
+</div>
+
   );
 }
 
