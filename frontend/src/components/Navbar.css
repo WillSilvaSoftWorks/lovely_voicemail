@@ -82,9 +82,9 @@
     justify-content: space-between;
     width: 30px;
     height: 22px;
-    z-index: 1001;
+    z-index: 1005;
     transition: color 0.3s ease;
-    margin-right: 20px;
+    margin-right: 5%;
 }
 
 .menuButton div {
