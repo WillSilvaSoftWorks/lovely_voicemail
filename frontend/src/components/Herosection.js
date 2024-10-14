@@ -1,4 +1,4 @@
-// src/components/HeroSection.js
+// src/components/HeroSection.js 
 import React from 'react';
 import './HeroSection.css'; // Import the CSS file for styling
 
