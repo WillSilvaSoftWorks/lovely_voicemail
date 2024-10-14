@@ -9,6 +9,7 @@ import ConstructionBanner from './components/ConstructionBanner'; // Import the 
 import Footer from './components/Footer';
 
 function App() {
+  // eslint-disable-next-line
   const [data, setData] = useState('');
   const [isDrawerOpen, setDrawerOpen] = useState(false); // Drawer state
 
