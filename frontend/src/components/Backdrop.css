@@ -1,14 +1,21 @@
-/* Backdrop styling */
+/* src/components/Backdrop.css */
+
 .backdrop {
-    position: fixed; /* Stays fixed as you scroll */
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    background-image: url('../assets/images/phone.png'); /* Replace with the correct path to your image */
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* No repeat */
-    background-attachment: fixed; 
-    z-index: -100; /* Make sure it stays behind all other content */
-}
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../assets/images/phone.png'); /* Replace with the correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -100;
+    transition: transform 0.3s ease; /* Smooth animation */
+  }
+  
+  .backdrop.drawer-open {
+    transform: translateY(200px); /* Adjust the value for smooth push down */
+  }
+  
+

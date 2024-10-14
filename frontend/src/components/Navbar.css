@@ -1,124 +1,161 @@
-/* Navbar styling*/
+/* Navbar styling */
+/* Navbar styling */
 .navbar {
-    position: fixed;
+    position: sticky; /* Navbar scrolls with the content */
     top: 0;
+    left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Space between logo/title and links */
+    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: transparent; /* No background */
-    z-index: 1000; /* Keep the navbar above other content */
+    background-color: rgba(255, 182, 193, 0); /* Pink translucent background */
+    z-index: 1000;
+    transition: background-color 0.3s ease;
 }
+
 
 /* Logo and title container */
 .navbar-logo-title {
-    display: flex; /* Align logo and title in a row */
-    align-items: center; /* Center them vertically */
+    display: flex;
+    align-items: center;
 }
 
 /* Logo styling */
 .navbar-logo {
-    width: 100px; /* Make logo 2 times smaller */
-    height: 100px; /* Set height to maintain aspect ratio */
-    border-radius: 50%; /* Rounded edges */
-    margin-right: 15px; /* Space between logo and title */
-    margin-left: 100px;
-    border: 5px solid #FFB6C1; /* Complete border definition with color */
-    display: flex; /* Allows for centering content if needed */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 3px solid #FFB6C1;
 }
 
 /* Title styling */
 .navbar-title {
-    color: #ffffff; /* Title color */
-    font-family: 'Dancing Script', sans-serif; /* Font for title */
-    font-size: 60px; /* Adjust font size as needed */
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
 }
 
-/* Links styling */
+/* Drawer open styles */
+.drawer-open .navbar-title {
+    color: black;
+}
+
+.drawer-open .menuButton div {
+    background-color: black;
+}
+
+/* Desktop links styling */
 .nav-links {
     list-style-type: none;
-    display: flex;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    display: flex; /* Flexbox for horizontal layout */
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
-    margin-right: 20px; /* Space between links */
+    margin-right: 30px;
 }
 
 .nav-links li a {
-    color: #ffffff; /* Text color */
+    color: white;
     text-decoration: none;
-    font-size: 25px;
-    font-family: 'Poppins', sans-serif; /* Font for links */
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
     transition: color 0.3s ease;
-    margin-right: 10px;
 }
 
 .nav-links li a:hover {
-    color: grey; /* Change hover effect to grey */
+    color: grey;
 }
 
+/* Mobile Drawer Menu (hamburger icon) */
+.menuButton {
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    z-index: 1001;
+}
+
+.menuButton div {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.menuButton.active .bar1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menuButton.active .bar2 {
+    opacity: 0;
+}
+
+.menuButton.active .bar3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Drawer Menu (for mobile) */
+.drawer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #FFB6C1;
+    padding: 20px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.drawer.open {
+    display: block;
+}
+
+.drawer-nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.drawer-nav-links li {
+    margin-bottom: 20px;
+}
+
+.drawer-nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.drawer-nav-links li a:hover {
+    color: grey;
+}
+
+/* Media queries for responsive design */
 @media (max-width: 768px) {
-      .navbar {
-        padding: 5px 10px;
-      }
-    
-      .navbar-logo {
-        width: 80px; /* Make the logo smaller on mobile */
-        height: 80px;
-      }
-    
-      .navbar-title {
-        font-size: 50px;
-      }
-    
-      .nav-links li a {
-        font-size: 18px; /* Reduce font size for links */
-      }
-
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center;
-        padding: 10px 0;
-    }
-
-    .navbar-logo-title {
-        flex-direction: column; /* Stack logo and title vertically */
-        align-items: center;
-        margin: 0;
-    }
-
-    .navbar-logo {
-        margin-right: 0; /* Remove margin to center logo */
-        margin-bottom: 5px; /* Add space between logo and title */
-    }
-
-    .navbar-title {
-        font-size: 50px; /* Smaller title for iPhone dimensions */
+    .menuButton {
+        display: flex; /* Show the hamburger menu on mobile */
     }
 
     .nav-links {
-        flex-direction: row; /* Stack links vertically */
-        margin: 10px;
+        display: none; /* Hide links on mobile */
     }
-
-    .nav-links li {
-        margin-right: 10px;
-        margin-bottom: 10px; /* Add space between links */
-    }
-
-    .nav-links li a {
-        font-size: 20px;
-    }
-    
-
 }
+
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex; /* Show links on desktop */
+    }
+}
+
 
 
