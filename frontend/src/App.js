@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchData } from './services/api';
 import Backdrop from './components/Backdrop'; // Import the component
 import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
+import HeroSection from './components/HeroSection'; 
 import AbsoluteNeed from './components/AbsoluteNeed';
 import ConstructionBanner from './components/ConstructionBanner'; // Import the banner component
 import Footer from './components/Footer';
