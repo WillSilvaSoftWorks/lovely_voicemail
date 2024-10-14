@@ -41,11 +41,7 @@ body {
 }
 
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Push HeroSection down when the drawer opens */
+.content.drawer-open {
+  transform: translateY(150px); /* Moves the HeroSection down by 200px */
 }

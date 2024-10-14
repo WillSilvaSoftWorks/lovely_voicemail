@@ -2,10 +2,11 @@
 footer {
     background-color: #FFB6C1; /* Pink background */
     color: white;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     font-size: 14px;
     width: 100%;
+    
     position: relative;
     z-index: 1000;
   }
@@ -41,6 +42,10 @@ footer {
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
   }
+  .footer.drawer-open {
+    transform: translateY(20px);
+  }
+
   
   /* Responsive Footer */
   @media (max-width: 768px) {

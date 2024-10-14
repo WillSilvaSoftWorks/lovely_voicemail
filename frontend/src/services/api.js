@@ -7,7 +7,7 @@ export const fetchData = async () => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
-    const data = await response.json(); // Adjust based on your backend response
+    const data = await response.json(); // Adjust based on backend response
     return data;
   } catch (error) {
     console.error('Error fetching data:', error);

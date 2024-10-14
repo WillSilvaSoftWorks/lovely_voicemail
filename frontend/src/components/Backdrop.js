@@ -5,7 +5,6 @@ import './Backdrop.css';
 function Backdrop({ isDrawerOpen }) {
   return (
     <div className={`backdrop ${isDrawerOpen ? 'drawer-open' : ''}`}>
-      {/* Background image will shift when drawer is open */}
     </div>
   );
 }

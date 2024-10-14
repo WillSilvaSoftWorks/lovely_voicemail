@@ -1,9 +1,9 @@
 import React from "react";
 import "./Footer.css";
 
-function Footer() {
+function Footer({ isDrawerOpen }) {
   return (
-    <footer className="footer">
+    <footer className={`footer ${isDrawerOpen ? 'drawer-open' : ''}`}>
       <div className="footer-content">
         <div className="footer-logo-title">
           <h2 className="footer-title">Lovely Voicemail</h2>

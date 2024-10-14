@@ -1,19 +1,17 @@
 /* Navbar styling */
-/* Navbar styling */
 .navbar {
-    position: sticky; /* Navbar scrolls with the content */
+    position: sticky; /* Stays at the top of the viewport */
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between logo/title and links */
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(255, 182, 193, 0); /* Pink translucent background */
-    z-index: 1000;
+    background-color: rgba(255, 182, 193, 0); /* Slightly translucent pink background */
+    z-index: 1001; /* Above other elements */
     transition: background-color 0.3s ease;
 }
-
 
 /* Logo and title container */
 .navbar-logo-title {
@@ -27,6 +25,7 @@
     height: 80px;
     border-radius: 50%;
     margin-right: 15px;
+    margin-left: 10px;
     border: 3px solid #FFB6C1;
 }
 
@@ -52,6 +51,7 @@
     display: flex; /* Flexbox for horizontal layout */
     margin: 0;
     padding: 0;
+    z-index: 1001; /* Above drawer */
 }
 
 .nav-links li {
@@ -77,12 +77,14 @@
     border: none;
     color: #ffffff;
     cursor: pointer;
-    display: none;
+    display: none; /* Hidden by default, visible on mobile */
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 22px;
     z-index: 1001;
+    transition: color 0.3s ease;
+    margin-right: 5px;
 }
 
 .menuButton div {
@@ -93,7 +95,7 @@
 }
 
 .menuButton.active .bar1 {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(7px, 5px);
 }
 
 .menuButton.active .bar2 {
@@ -101,23 +103,28 @@
 }
 
 .menuButton.active .bar3 {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(7px, -5px);
 }
 
 /* Drawer Menu (for mobile) */
 .drawer {
-    position: absolute;
-    top: 100%;
+    position: absolute; /* Fix the drawer below the navbar */
+    top: 90px; /* Adjust based on navbar height */
     left: 0;
     width: 100%;
     background-color: #FFB6C1;
     padding: 20px;
+    z-index: 999; /* Drawer below the navbar */
     display: none;
     transition: all 0.3s ease;
+    margin-top: 60px;
+    border-radius: 0px 0px 30px 30px;
+    
 }
 
 .drawer.open {
     display: block;
+    margin-top: 5px;
 }
 
 .drawer-nav-links {
@@ -126,7 +133,8 @@
 }
 
 .drawer-nav-links li {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    
 }
 
 .drawer-nav-links li a {
@@ -134,12 +142,19 @@
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s;
+    
 }
 
 .drawer-nav-links li a:hover {
     color: grey;
 }
 
+.navbar.drawer-open{
+    position:sticky;
+    background-color: rgb(248, 248, 248);
+    margin-bottom: 0;
+
+}
 /* Media queries for responsive design */
 @media (max-width: 768px) {
     .menuButton {

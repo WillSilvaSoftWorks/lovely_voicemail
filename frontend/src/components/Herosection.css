@@ -6,7 +6,7 @@
     color: white; /* White text */
     padding-top: 200px; /* Space from the top */
     font-family: 'Poppins', sans-serif; /* Font family */
-    margin-bottom: 300px;
+    margin-bottom: 170px;
     transition: transform 0.3s ease; /* Smooth transition when drawer opens */
 }
 
@@ -20,7 +20,7 @@
 /* Description text styling */
 .hero-content p {
     font-size: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 /* Button styling */
@@ -40,7 +40,8 @@
 }
 
 /* Push HeroSection down when the drawer opens */
-.drawer-open .hero-content {
-    transform: translateY(200px); /* Moves the HeroSection down by 200px */
+.drawer-open.hero-content {
+    transform: translateY(20px); /* Moves the HeroSection down by 200px */
+    margin-bottom: 0px;
 }
 
