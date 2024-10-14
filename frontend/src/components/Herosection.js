@@ -1,8 +1,8 @@
-// src/components/HeroSection.js
+// src/components/Herosection.js 
 import React from 'react';
-import './HeroSection.css'; // Import the CSS file for styling
+import './Herosection.css'; // Import the CSS file for styling
 
-function HeroSection({ isDrawerOpen }) {
+function Herosection({ isDrawerOpen }) {
   return (
     <div className={`hero-content ${isDrawerOpen ? 'drawer-open' : ''}`}>
       <h1>Your Loved Ones Voices Last Forever</h1>
@@ -12,4 +12,4 @@ function HeroSection({ isDrawerOpen }) {
   );
 }
 
-export default HeroSection;
+export default Herosection;
