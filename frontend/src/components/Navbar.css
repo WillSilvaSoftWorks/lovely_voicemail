@@ -84,7 +84,7 @@
     height: 22px;
     z-index: 1001;
     transition: color 0.3s ease;
-    margin-right: 5px;
+    margin-right: 20px;
 }
 
 .menuButton div {
@@ -159,6 +159,8 @@
 @media (max-width: 768px) {
     .menuButton {
         display: flex; /* Show the hamburger menu on mobile */
+        z-index: 1005;
+        margin-right: 2%;
     }
 
     .nav-links {
