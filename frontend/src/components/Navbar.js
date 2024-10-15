@@ -4,7 +4,7 @@ import logo from '../assets/images/Lovely_Voicemail_Media.png';
 
 function Navbar({ isDrawerOpen, toggleDrawer }) {
   return (
-    <nav className={`navbar ${isDrawerOpen ? 'drawer-open' : ''}`}>
+    <nav className={`nav-bar ${isDrawerOpen ? 'drawer-open' : ''}`}>
       <div className="navbar-logo-title">
         <img src={logo} alt="Lovely Voicemail Logo" className="navbar-logo"/>
         <div className="navbar-title">Lovely Voicemail</div>
