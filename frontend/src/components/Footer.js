@@ -3,13 +3,13 @@ import "./Footer.css";
 
 function Footer({ isDrawerOpen }) {
   return (
-    <footer className={`footer ${isDrawerOpen ? 'drawer-open' : ''}`}>
-      <div className="footer-content">
-        <div className="footer-logo-title">
-          <h2 className="footer-title">Lovely Voicemail</h2>
-          <p className="copyright">&copy; 2024 Lovely Voicemail. All rights reserved.</p>
+    <footer class={`footer ${isDrawerOpen ? 'drawer-open' : ''}`}>
+      <div class="footer-content">
+        <div class="footer-logo-title">
+          <h2 class="footer-title">Lovely Voicemail</h2>
+          <p class="copyright">&copy; 2024 Lovely Voicemail. All rights reserved.</p>
         </div>
-        <ul className="footer-links">
+        <ul class="footer-links">
           <li><a href="/">Home</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/phones">Phones</a></li>
