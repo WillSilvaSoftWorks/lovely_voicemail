@@ -6,8 +6,9 @@
     color: white; /* White text */
     padding-top: 200px; /* Space from the top */
     font-family: 'Poppins', sans-serif; /* Font family */
-    margin-bottom: 170px;
+    margin-bottom: 160px;
     transition: transform 0.3s ease; /* Smooth transition when drawer opens */
+    width: 100%;
 }
 
 /* Title styling */

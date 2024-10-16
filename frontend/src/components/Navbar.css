@@ -1,6 +1,6 @@
 /* Navbar styling */
 .nav-bar {
-    position: sticky; /* Stays at the top of the viewport */
+    position: absolute; /* Stays at the top of the viewport */
     top: 0;
     left: 0;
     width: 100%;
@@ -12,12 +12,14 @@
     z-index: 1001; /* Above other elements */
     transition: background-color 0.3s ease;
     border-radius: 0px 0px 5px 5px;
+    margin-top: 5vh;
 }
 
 /* Logo and title container */
 .navbar-logo-title {
     display: flex;
     align-items: center;
+    margin-top: 1vh;
 }
 
 /* Logo styling */
@@ -26,7 +28,7 @@
     height: 80px;
     border-radius: 50%;
     margin-right: 15px;
-    margin-left: 10px;
+    margin-left: 10vw;
     border: 3px solid #FFB6C1;
 }
 
@@ -53,6 +55,7 @@
     margin: 0;
     padding: 0;
     z-index: 1001; /* Above drawer */
+    margin-right: 10vw;
 }
 
 .nav-links li {
@@ -162,7 +165,7 @@
     .menuButton {
         display: flex; /* Show the hamburger menu on mobile */
         z-index: 1005;
-        margin-right: 2%;
+        margin-right: 10vw;
         color: black;
     }
     .menuButton div {
@@ -188,7 +191,7 @@
     .navbar-title {
         color: white;
         font-family: 'Dancing Script', cursive;
-        font-size: 36px;
+        font-size: 30px;
     }
 
     .navbar-logo {
@@ -196,7 +199,7 @@
         height: 70px;
         border-radius: 50%;
         margin-right: 15px;
-        margin-left: 10px;
+        margin-left: 10vw;
         border: 3px solid #FFB6C1;
     }
 
