@@ -13,8 +13,5 @@
     transition: all 0.3s ease; /* Smooth animation */
   }
   
-  .backdrop.drawer-open {
-    transform: translateY(150px); /* Adjust the value for smooth push down */
-  }
   
 

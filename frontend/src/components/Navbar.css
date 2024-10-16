@@ -113,7 +113,7 @@
 /* Drawer Menu (for mobile) */
 .drawer {
     position: absolute; /* Fix the drawer below the navbar */
-    top: 90px; /* Adjust based on navbar height */
+    top: 100px; /* Adjust based on navbar height */
     left: 0;
     width: 100%;
     background-color: #FFB6C1;
@@ -165,7 +165,7 @@
     .menuButton {
         display: flex; /* Show the hamburger menu on mobile */
         z-index: 1005;
-        margin-right: 10vw;
+        margin-right: 15vw;
         color: black;
     }
     .menuButton div {
@@ -192,14 +192,14 @@
         color: white;
         font-family: 'Dancing Script', cursive;
         font-size: 30px;
+        margin-left: 2vw;
     }
 
     .navbar-logo {
         width: 70px;
         height: 70px;
         border-radius: 50%;
-        margin-right: 15px;
-        margin-left: 10vw;
+        margin: auto;
         border: 3px solid #FFB6C1;
     }
 
