@@ -8,6 +8,9 @@
     align-items: center;
     flex-direction: column;
     margin-top: 0;
+    background-size: cover;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    box-sizing: border-box; /* Ensure padding and borders are included in width calculations */
 }
 
 /* Content layout (image left, text right) */
@@ -18,11 +21,14 @@
     max-width: 1200px;
     width: 100%;
     gap: 40px;
+    box-sizing: border-box;
+    padding: 0 15px; /* Add padding to prevent content from touching edges */
 }
 
 /* Image container */
 .image-container {
     flex-basis: 40%; /* Ensure the image takes up 40% of the container */
+    box-sizing: border-box;
 }
 
 .product-image {
@@ -35,6 +41,7 @@
 /* Text container */
 .text-container {
     flex-basis: 55%; /* Ensure the text takes up 55% of the container */
+    box-sizing: border-box;
 }
 
 .card-title {
@@ -70,13 +77,14 @@
 
 .absolute-need-section.drawer-open {
     transform: translateY(150px); /* Adjust the value for smooth push down */
-  }
+}
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .absolute-need-section {
-        width: 100%;
+        padding: 20px; /* Reduce padding for smaller screens */
     }
+
     .absolute-need-content {
         flex-direction: column;
         text-align: center;
@@ -87,7 +95,8 @@
     }
 
     .product-image {
-        width: 80%;
+        width: 100%;
+        height: auto; /* Ensure the image scales properly */
     }
 
     .card-title {
@@ -112,6 +121,5 @@
         font-size: 14px;
     }
 }
-
 
 

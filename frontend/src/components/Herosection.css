@@ -42,7 +42,7 @@
 
 /* Push HeroSection down when the drawer opens */
 .drawer-open.hero-content {
-    transform: translateY(20px); /* Moves the HeroSection down by 200px */
+    transform: translateY(80px); /* Moves the HeroSection down by 200px */
     margin-bottom: 0px;
 }
 
