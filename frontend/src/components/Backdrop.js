@@ -4,7 +4,7 @@ import './Backdrop.css';
 
 function Backdrop({ isDrawerOpen }) {
   return (
-    <div class={`backdrop ${isDrawerOpen ? 'drawer-open' : ''}`}>
+    <div className={`backdrop ${isDrawerOpen ? 'drawer-open' : ''}`}>
     </div>
   );
 }
