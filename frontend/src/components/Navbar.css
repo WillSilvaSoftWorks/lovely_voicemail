@@ -167,8 +167,8 @@ html, body {
 @media (max-width: 768px) {
     .menuButton {
         display: flex; /* Show the hamburger menu on mobile */
-        z-index: 1005;
-        margin-right: 8vw;
+        z-index: 1006;
+        margin-right: 8%;
         color: black;
     }
     .menuButton div {
