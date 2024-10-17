@@ -31,10 +31,10 @@ function App() {
   }, []);
 
   return (
-    <div class="App">
+    <div className="App">
       <ConstructionBanner />
       <Navbar isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
-      <div class="content" >
+      <div className="content" >
         <Backdrop isDrawerOpen={isDrawerOpen} />
         <Herosection isDrawerOpen={isDrawerOpen} />
         <AbsoluteNeed isDrawerOpen={isDrawerOpen}/>
