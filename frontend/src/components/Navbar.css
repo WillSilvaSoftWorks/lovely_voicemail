@@ -88,6 +88,7 @@
     z-index: 1005;
     transition: color 0.3s ease;
     margin-right: 8%;
+    padding: 0px;
 }
 
 .menuButton div {
@@ -98,7 +99,7 @@
 }
 
 .menuButton.active .bar1 {
-    transform: rotate(45deg) translate(7px, 5px);
+    transform: rotate(45deg) translate(8px, 5px);
 }
 
 .menuButton.active .bar2 {
@@ -106,7 +107,7 @@
 }
 
 .menuButton.active .bar3 {
-    transform: rotate(-45deg) translate(7px, -5px);
+    transform: rotate(-45deg) translate(9px, -5px);
 }
 
 /* Drawer Menu (for mobile) */
