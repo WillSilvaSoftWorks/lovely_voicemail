@@ -165,7 +165,8 @@ html, body {
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
-    .menuButton {
+    
+    .menuButton.active{
         display: flex; /* Show the hamburger menu on mobile */
         z-index: 1006;
         margin-right: 8%;
@@ -181,7 +182,6 @@ html, body {
     .nav-bar.drawer-open{
         position:sticky;
         background-color: white;
-
         color: white;
         width: 100%;
         margin-top: 0;
