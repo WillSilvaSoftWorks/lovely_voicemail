@@ -1,0 +1,193 @@
+.review-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-title {
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Radio buttons are hidden */
+input[type="radio"] {
+    display: none;
+}
+
+/* Slider container */
+.slider {
+    width: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+}
+
+/* Each review card */
+.review-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 295px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+/* Align review content */
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-info h3 {
+    margin: 0;
+}
+
+.review-text {
+    margin-top: 10px;
+}
+
+.etsy-logo {
+    width: 55px;
+    height: 30px;
+}
+
+.rating {
+    margin-top: 10px;
+    color: #333;
+}
+
+.view-product {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.view-product:hover {
+    background-color: #ff4c4c;
+}
+
+/* Slider position based on checked radio button */
+#review1:checked ~ .slider {
+    transform: translateX(0);
+}
+
+#review2:checked ~ .slider {
+    transform: translateX(-100%);
+}
+
+#review3:checked ~ .slider {
+    transform: translateX(-200%);
+}
+
+#review4:checked ~ .slider {
+    transform: translateX(-300%);
+}
+
+/* Slider navigation dots */
+.slider-nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-btn {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#review1:checked ~ .slider-nav label[for="review1"],
+#review2:checked ~ .slider-nav label[for="review2"],
+#review3:checked ~ .slider-nav label[for="review3"],
+#review4:checked ~ .slider-nav label[for="review4"] {
+    background-color: #ff6b6b;
+}
+
+/* Arrow buttons */
+.arrow {
+    position: absolute;
+    top: 92%;
+    transform: translateY(-50%);
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 40%;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 20px;
+    width: 3vw;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.arrow:disabled {
+    background-color: #ccc;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .slider {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .review-card {
+        width: 90%; /* Make the cards fit within the screen */
+        margin: 15px auto;
+    }
+
+    .arrow {
+        display: block; /* Show arrows on mobile */
+        width: 10vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-card {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    .reviews-title {
+        font-size: 1.5rem;
+    }
+
+    .etsy-logo {
+        width: 45px;
+        height: 25px;
+    }
+
+    .rating {
+        font-size: 14px;
+    }
+
+    .view-product {
+        font-size: 14px;
+        padding: 6px 12px;
+
+    }
+}
