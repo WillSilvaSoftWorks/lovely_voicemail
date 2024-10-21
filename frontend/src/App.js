@@ -7,6 +7,11 @@ import Herosection from './components/Herosection.js';
 import AbsoluteNeed from './components/AbsoluteNeed';
 import ConstructionBanner from './components/ConstructionBanner'; // Import the banner component
 import Footer from './components/Footer';
+import ReviewSection from './components/ReviewSection';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+
 
 function App() {
   // eslint-disable-next-line
@@ -38,6 +43,7 @@ function App() {
         <Backdrop isDrawerOpen={isDrawerOpen} />
         <Herosection isDrawerOpen={isDrawerOpen} />
         <AbsoluteNeed isDrawerOpen={isDrawerOpen}/>
+        <ReviewSection />
         <Footer isDrawerOpen={isDrawerOpen} />
       </div>
       
