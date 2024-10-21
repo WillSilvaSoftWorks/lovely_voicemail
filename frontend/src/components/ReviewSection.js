@@ -4,22 +4,6 @@ import etsyLogo from '../assets/images/etsy-logo.png';
 
 const reviews = [
   {
-    name: "Kirsten",
-    date: "Oct 8, 2024",
-    rating: 5,
-    text: "We used this for our wedding as a guest book! The phone was so cute, just as pictured! And super easy to use for our guests.",
-    product: "White Voicemail Guest Book with Sign",
-    productLink: "https://www.etsy.com/listing/1660741405/voicemail-guest-book-with-sign-free"
-  },
-  {
-    name: "Navalyn",
-    date: "Oct 1, 2024",
-    rating: 5,
-    text: "My grandmother loved this gift! It made her cry and that was the goal. Happy tears!!",
-    product: "Black Retro Audio Guest Book Phone with Sign",
-    productLink: "https://www.etsy.com/listing/1660744197/vintage-audio-guest-book-phone-with-sign"
-  },
-  {
     name: "pdemars10",
     date: "Oct 18, 2024",
     rating: 5,
@@ -44,7 +28,7 @@ const reviews = [
     productLink: "https://www.etsy.com/listing/1660744197/vintage-audio-guest-book-phone-with-sign"
   },
   {
-    name: "Maria Fernanda Rodriguez",
+    name: "Maria Rodriguez",
     date: "Oct 12, 2024",
     rating: 5,
     text: "Great item to have in Your event! I am looking forward to hearing all the messages from my invitees.",
@@ -60,14 +44,95 @@ const reviews = [
     productLink: "https://www.etsy.com/listing/1660744197/vintage-audio-guest-book-phone-with-sign"
   },
   {
+    name: "Kirsten",
+    date: "Oct 8, 2024",
+    rating: 5,
+    text: "We used this for our wedding as a guest book! The phone was so cute, just as pictured! And super easy to use for our guests.",
+    product: "White Voicemail Guest Book with Sign",
+    productLink: "https://www.etsy.com/listing/1660741405/voicemail-guest-book-with-sign-free"
+  },
+  {
     name: "Heidi",
     date: "Oct 4, 2024",
     rating: 5,
     text: "The phone is adorable and exactly as ordered/pictured. The message was easy to set up. Summer is great to work with and in answering your questions quickly.",
     product: "White Retro Audio Guest Book Phone with Sign",
     productLink: "https://www.etsy.com/listing/1660744197/vintage-audio-guest-book-phone-with-sign"
+  },
+  {
+    name: "adriv17",
+    date: "Sep 20, 2024",
+    rating: 5,
+    text: "The Bride to be and all guests loved this! We decided to use it for her Bridal Shower so far and she’ll use it again for the wedding! Very fun, sweet, and personable!",
+    product: "White Retro Audio Guest Book Phone with Sign",
+    productLink: "https://www.etsy.com/listing/1660744197/vintage-audio-guest-book-phone-with-sign"
+  },
+  {
+    name: "bsandler84",
+    date: "Sep 20, 2024",
+    rating: 5,
+    text: "Great product! Amazing customer service!",
+    product: "Black Retro Audio Guest Book Phone with Sign",
+    productLink: "https://www.etsy.com/listing/1660744197/vintage-audio-guest-book-phone-with-sign"
+  },
+  {
+    name: "Rodricnique",
+    date: "Sep 5, 2024",
+    rating: 5,
+    text: "Item went above my expectations, in person it’s even more beautiful & well worth the price.",
+    product: "White Voicemail Guest Book with Sign",
+    productLink: "https://www.etsy.com/listing/1660741405/voicemail-guest-book-with-sign-free"
+  },
+  {
+    name: "kenforeverlost",
+    date: "Sep 3, 2024",
+    rating: 5,
+    text: "Product is a quality and unique guest book! Seller is helpful and responsive. Would highly recommend!",
+    product: "White Retro Audio Guest Book Phone with Sign",
+    productLink: "https://www.etsy.com/listing/1660744197/vintage-audio-guest-book-phone-with-sign"
+  },
+  {
+    name: "Claire",
+    date: "Aug 24, 2024",
+    rating: 5,
+    text: "She was so great and amazing! The phone is perfect so nice easy directions I can’t wait for my wedding to see everybody using it !!!",
+    product: "Black Voicemail Guest Book with Sign",
+    productLink: "https://www.etsy.com/listing/1660741405/voicemail-guest-book-with-sign-free"
+  },
+  {
+    name: "Adisa",
+    date: "Aug 22, 2024",
+    rating: 5,
+    text: "Seller was great! The phone was a hit at the wedding! Can’t wait to listen to the messages at our 1yr!",
+    product: "White Retro Audio Guest Book Phone with Sign",
+    productLink: "https://www.etsy.com/listing/1660744197/vintage-audio-guest-book-phone-with-sign"
+  },
+  {
+    name: "Nuria",
+    date: "Aug 21, 2024",
+    rating: 5,
+    text: "I received the phone for my daughters Quince and it is a perfect addition for the party. Can’t wait to use it. Had questions when it arrived but the seller was quick to respond which was appreciated. I love the idea of a phone guestbook.",
+    product: "White Retro Audio Guest Book Phone with Sign",
+    productLink: "https://www.etsy.com/listing/1660744197/vintage-audio-guest-book-phone-with-sign"
+  },
+  {
+    name: "Janie",
+    date: "Aug 17, 2024",
+    rating: 5,
+    text: "Just absolutely amazing! The amount of compliments we got on this audio guestbook was through the roof! Couldn’t be happier with how everything turned out and even more excited to be able to hear our loved ones voices for years to come! Beautiful memories 🥰",
+    product: "Black Voicemail Guest Book with Sign",
+    productLink: "https://www.etsy.com/listing/1660741405/voicemail-guest-book-with-sign-free"
+  },
+  {
+    name: "Gina",
+    date: "Aug 16, 2024",
+    rating: 5,
+    text: "Summer was SO helpful and responsive to all of our questions. The phone is beautiful and voicemails play back clear!",
+    product: "Black Voicemail Guest Book with Sign",
+    productLink: "https://www.etsy.com/listing/1660741405/voicemail-guest-book-with-sign-free"
   }
 ];
+
 
 const ReviewSection = () => {
   const [currentSlide, setCurrentSlide] = useState(1); // Start at the first review
@@ -84,15 +149,15 @@ const ReviewSection = () => {
   
 
   const prevSlide = () => {
-    if (currentSlide > 1) {
-      setCurrentSlide(currentSlide - 1);
-      const prevRadioButton = document.getElementById(`review${currentSlide - 1}`);
-      if (prevRadioButton) {
-        prevRadioButton.checked = true;
-      }
+  if (currentSlide > 1) {
+    setCurrentSlide(currentSlide - 1);
+    const prevRadioButton = document.getElementById(`review${currentSlide - 1}`);
+    if (prevRadioButton) {
+      prevRadioButton.checked = true;
     }
-  };
-  
+  }
+};
+
 
   return (
     <div className="review-section">

@@ -73,6 +73,9 @@ input[type="radio"] {
     padding: 8px 15px;
     border-radius: 5px;
     text-decoration: none;
+    position: absolute;
+    bottom: 30px;
+    width: 100px;
 }
 
 .view-product:hover {
@@ -164,6 +167,10 @@ input[type="radio"] {
         display: block; /* Show arrows on mobile */
         width: 10vw;
     }
+    .view-product {
+        width: 20vw;
+    }
+
 }
 
 @media (max-width: 480px) {
