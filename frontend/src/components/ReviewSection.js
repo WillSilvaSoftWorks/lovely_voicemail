@@ -122,14 +122,6 @@ const reviews = [
     text: "Just absolutely amazing! The amount of compliments we got on this audio guestbook was through the roof! Couldn’t be happier with how everything turned out and even more excited to be able to hear our loved ones voices for years to come! Beautiful memories 🥰",
     product: "Black Voicemail Guest Book with Sign",
     productLink: "https://www.etsy.com/listing/1660741405/voicemail-guest-book-with-sign-free"
-  },
-  {
-    name: "Gina",
-    date: "Aug 16, 2024",
-    rating: 5,
-    text: "Summer was SO helpful and responsive to all of our questions. The phone is beautiful and voicemails play back clear!",
-    product: "Black Voicemail Guest Book with Sign",
-    productLink: "https://www.etsy.com/listing/1660741405/voicemail-guest-book-with-sign-free"
   }
 ];
 
@@ -190,13 +182,10 @@ const ReviewSection = () => {
                 <img src={etsyLogo} alt="Etsy Logo" className="etsy-logo" />
               </a>
             </div>
-
             <p className="review-text">{review.text}</p>
-
             <div className="rating">
               {'⭐'.repeat(review.rating)} {review.rating} out of 5 stars
             </div>
-
             <p className="product">Ordered: {review.product}</p>
             <a href={review.productLink} className="view-product" target="_blank" rel="noopener noreferrer">View Product</a>
           </div>
