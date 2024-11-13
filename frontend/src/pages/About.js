@@ -1,8 +1,15 @@
 // src/pages/About.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './About.css';
 
 const About = () => {
+  const navigate = useNavigate(); // Initialize navigate function
+
+  const handleButtonClick = () => {
+    navigate('/phones'); // Redirect to the Phones page
+  };
+
   return (
     <div className="about-page">
       <div className="hero-section">
@@ -25,7 +32,6 @@ const About = () => {
           <p>
             At Lovely Voicemail, we provide a modern twist on traditional guest books. Our Audio Guest Book
             captures heartfelt messages from loved ones, transforming them into keepsakes you can cherish for years to come.
-            Each message is a piece of your story, a way to relive the voices of your loved ones long after the celebration.
           </p>
         </section>
 
@@ -33,11 +39,16 @@ const About = () => {
           <h2>Our Mission</h2>
           <p>
             Our mission is to help couples and event organizers create lasting memories. We believe every moment deserves to be
-            celebrated and remembered, and our Audio Guest Books are designed to do just that. Thank you for choosing us to be a part
-            of your special day.
+            celebrated and remembered, and our Audio Guest Books are designed to do just that.
           </p>
-          <p>Lovely Voicemail – Capturing moments, preserving voices.</p>
         </section>
+
+        {/* Select Your Style Button */}
+        <div className="select-style-button-container">
+          <button className="hero-button" onClick={handleButtonClick}>
+            Select Your Style
+          </button>
+        </div>
       </div>
     </div>
   );
