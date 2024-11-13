@@ -1,3 +1,4 @@
+// src/components/Navbar.js
 import React from "react";
 import "./Navbar.css";
 import logo from '../assets/images/Lovely_Voicemail_Media.png';
@@ -24,6 +25,7 @@ function Navbar({ isDrawerOpen, toggleDrawer }) {
           <li><a href="/about">About</a></li>
           <li><a href="/phones">Phones</a></li>
           <li><a href="/contact">Contact</a></li>
+          <li><a href="/help">Help</a></li> {/* Added Help link */}
         </ul>
       </div>
 
@@ -33,10 +35,10 @@ function Navbar({ isDrawerOpen, toggleDrawer }) {
         <li><a href="/about">About</a></li>
         <li><a href="/phones">Phones</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/help">Help</a></li> {/* Added Help link */}
       </ul>
     </nav>
   );
 }
 
 export default Navbar;
-

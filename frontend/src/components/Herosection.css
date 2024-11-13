@@ -26,18 +26,20 @@
 
 /* Button styling */
 .hero-button {
-    background-color: #FFB6C1; /* Pink button matching theme */
+    background-color: #853844; /* Pink color */
+    color: #9d5bb9;
     border: none;
-    padding: 15px 30px;
-    font-size: 20px;
-    color: white;
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Button hover effect */
 .hero-button:hover {
-    background-color: #ff92a1; /* Darker pink when hovered */
+    background-color: #ff1493; /* Darker pink on hover */
+    transform: scale(1.05);
 }
 
 /* Push HeroSection down when the drawer opens */

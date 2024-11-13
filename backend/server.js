@@ -1,37 +1,35 @@
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const testDbConnectionRoute = require('./routes/dbTest'); // Adjust the path as needed
+import express from 'express';
+import fetch from 'node-fetch';
+import cors from 'cors';
+import dotenv from 'dotenv';
 
-
+dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 5001;
-const mongoUrl = process.env.MONGO_URL;
 
+app.use(cors()); // Allow all origins for development
 
-app.use(cors());
+const PORT = process.env.PORT || 5001;
 
-// Database connection
-mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('Connected to MongoDB successfully');
-  })
-  .catch((error) => {
-    console.error('Error connecting to MongoDB:', error);
-  });
-  
-app.use('/api', testDbConnectionRoute);
+app.get('/api/phones', async (req, res) => {
+  const apiKey = process.env.ETSY_API_KEY;
+  const shopId = process.env.SHOP_ID;
 
-
-app.get('/', (req, res) => {
-  res.json({ message: 'Hello from the backend!' }); // Sending JSON response
+  try {
+    const response = await fetch(
+      `https://openapi.etsy.com/v2/shops/${shopId}/listings/active?api_key=${apiKey}`
+    );
+    if (!response.ok) {
+      throw new Error(`Etsy API Error: ${response.statusText}`);
+    }
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error('Error fetching products from Etsy API:', error);
+    res.status(500).json({ error: 'Failed to fetch products' });
+  }
 });
 
-
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
-
-
