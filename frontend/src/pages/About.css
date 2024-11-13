@@ -34,7 +34,7 @@
   text-align: center;
   width: 90%;
   max-width: 800px;
-  margin-top: 20px;
+  margin-top: 15vh;
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -88,7 +88,7 @@
 }
 
 .hero-button {
-  background-color: #b5651d;
+  background-color: #FFB6C1;
   color: #fff;
   border: none;
   padding: 10px 25px;
@@ -127,7 +127,7 @@
   }
 
   .hero-section, .card {
-      width: 95%;
+      width: 90%;
       padding: 20px;
   }
 
