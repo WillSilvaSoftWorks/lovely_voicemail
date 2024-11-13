@@ -1,0 +1,94 @@
+/* src/pages/About.css */
+
+.about-page {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-image: url('../assets/images/phone.png'); /* Backdrop image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 20px 0;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-section {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for readability */
+    color: #333; /* Black text */
+    padding: 40px 20px;
+    text-align: center;
+    width: 92%; /* 90% width */
+    max-width: 800px;
+    margin-top: 20px; /* Space below the navigation */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .hero-section p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .card {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for readability */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 30px auto;
+    width: 90%; /* 90% width */
+    max-width: 800px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .card section {
+    margin-bottom: 20px;
+  }
+  
+  .card h2 {
+    color: #b5651d;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  /* Mobile-Friendly Adjustments */
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero-section p {
+      font-size: 1rem;
+    }
+  
+    .card h2 {
+      font-size: 1.4rem;
+    }
+  
+    .card p {
+      font-size: 0.95rem;
+    }
+  
+    .about-page {
+      padding: 10px;
+    }
+  
+    .hero-section, .card {
+      width: 95%;
+      padding: 20px;
+    }
+  }
