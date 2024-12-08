@@ -14,7 +14,8 @@ const Contact = () => {
           method="POST"
           data-netlify="true"
           className="contact-form"
-          action="/thank-you" // Optional: Redirects to thank-you page
+          action="/thank-you"
+          netlify
         >
           {/* Netlify Hidden Field */}
           <input type="hidden" name="form-name" value="contact" />
